@@ -16,11 +16,19 @@ The purpose of this application is to turn power off and on at the mains for cen
   - Does not account for setups that include the Sonos Sub or Playbar, or that use stereo pairing (using one player for the left channel and another for the right)
   - A player's amplifier may turn on upon being added to a group even when the group is not playing anything. It will turn off after `stopTimeout` if the group does not begin playing something in the meantime.
 
-## SonosAmpJuicePi.img.gz
-  - This is a ready-to-run image for Raspberry Pi 2, adapted from the one at https://github.com/jishi/node-sonos-http-api/releases/download/v1.0.1/sonos-http-api-1.0.1.img.gz.
-  - Files are exposed over the network via shares (Samba a.k.a SMB a.k.a. UNC), so you may not ever need to SSH into it (but note that root has no password and change that as appropriate for your setup!).
-  - Set up your room names etc. as specified above by editing `\\sonos\flash\apps\SonosAmpJuicePi\app.js`.
-  - See what is going on by opening the latest file in `\\sonos\flash\logs`.
+## Pre-composed raspberry pi image
+  - Download URL: https://github.com/geeeyetee/SonosAmpJuicePi/releases/download/v1.0/SonosAmpJuicePi.img.gz
+  - Windows users, you can extract the .img file from this .gz archive using the free 7zip application.
+  - This is a ready-to-run image for Raspberry Pi 2 (it should also work on Pi B/B+ and 3).
+  - The image is clumsily adapted the one Jimmy Shimizu links to from https://jishi.github.io/node-sonos-http-api/, so here are helpful instructions lifted from the same page:
+  
+>   - By default the root user has no password, if you want to set a password, just SSH to that machine and set a new root password.
+>   - It also has samba installed by default, and sharing the /flash folder with read/write permissions for easier access. Just visit \\sonos from a windows machine or smb://sonos from macOS (replace sonos with the IP if it doesn't work).
+>   - To write the image to an SD-card, use the`dd` command on Linux and OS X, or Win32DiskWriter on Windows.
+
+  - Set up your room names etc. as specified above by editing `\\sonos\flash\apps\SonosAmpJuicePi\app.js` / `smb://sonos/flash/apps/SonosAmpJuicePi\app.js`
+  - Then restart the Pi and wait a few minutes for network discovery to complete.
+  - To troubleshoot, open the latest file in `\\sonos\flash\logs` / `smb://sonos/flash/logs`.
 
 ## Acknowledgement
 This is a trivial hack with a result that its author finds incredibly useful. It only exists because of the yeoman's work done by Jimmy Shimizu (https://github.com/jishi/). Thank you, Jimmy!!!
