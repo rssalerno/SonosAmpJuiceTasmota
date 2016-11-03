@@ -14,7 +14,7 @@ The purpose of this application is to turn power off and on at the mains for cen
   - Turns amplifiers on instantly when they are needed; turns them off after `stopTimeout` when they are not. `stopTimeout` will reset while users are making any additional changes such as pausing or starting and adjusting volume.
   - Runs reliably and long-term on the author's Raspberry Pi 2
   - Does not account for setups that include the Sonos Sub or Playbar, or that use stereo pairing (using one player for the left channel and another for the right)
-	- A player's amplifier may turn on upon being added to a group even when the group is not playing anything. It will turn off after `stopTimeout` if the group does not begin playing something in the meantime.
+  - A player's amplifier may turn on upon being added to a group even when the group is not playing anything. It will turn off after `stopTimeout` if the group does not begin playing something in the meantime.
 
 ## SonosAmpJuicePi.img.gz
   - This is a ready-to-run image for Raspberry Pi 2, adapted from the one at https://github.com/jishi/node-sonos-http-api/releases/download/v1.0.1/sonos-http-api-1.0.1.img.gz.
