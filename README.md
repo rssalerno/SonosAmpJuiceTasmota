@@ -1,7 +1,7 @@
 # SonosAmpJuicePi
 
 ## Purpose
-The purpose of this application is to turn power off and on at the mains for centrally-located amplifiers/receivers, using GPIO pins on the Raspberry Pi connected to relays (such as the PowerSwitch Tail).
+The purpose of this application is to turn power off and on at the mains for centrally-located amplifiers/receivers, based on Sonos activity and using GPIO pins on the Raspberry Pi connected to relays (such as the PowerSwitch Tail).
 
 ## App.js
   - Edit the `amps` variable to associate each of your sonos player/room names with a GPIO physical pin number (which you in turn have connected to a relay that controls power to the corresponding amplifier).
