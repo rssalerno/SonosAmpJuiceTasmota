@@ -28,8 +28,8 @@ The purpose of this application is to turn power off and on at the mains for cen
 
 ### How to reset host keys (important security instructions from Jishi)
 >   - I don't recall exact folder where these reside, but I think this is it:
->  ```rm /etc/sshd/ssh_host_*
->  lbu_commit```
+```rm /etc/sshd/ssh_host_*
+lbu_commit```
 >   - It will generate new keys upon reboot now.
 >   - After rebooting, login and run lbu_commit again
 
