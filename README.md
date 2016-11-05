@@ -26,6 +26,13 @@ The purpose of this application is to turn power off and on at the mains for cen
 >   - It also has samba installed by default, and sharing the /flash folder with read/write permissions for easier access. Just visit \\sonos from a windows machine or smb://sonos from macOS (replace sonos with the IP if it doesn't work).
 >   - To write the image to an SD-card, use the`dd` command on Linux and OS X, or Win32DiskWriter on Windows.
 
+### How to reset host keys (important security instructions from Jishi)
+>   - I don't recall exact folder where these reside, but I think this is it:
+>  rm /etc/sshd/ssh_host_*
+>  lbu_commit
+>   - It will generate new keys upon reboot now.
+>   - After rebooting, login and run lbu_commit again
+
   - Set up your room names etc. as specified above by editing `\\sonos\flash\apps\SonosAmpJuicePi\app.js` / `smb://sonos/flash/apps/SonosAmpJuicePi\app.js`
   - Then restart the Pi and wait a few minutes for network discovery to complete.
   - To troubleshoot, open the latest file in `\\sonos\flash\logs` / `smb://sonos/flash/logs`.
