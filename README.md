@@ -43,3 +43,6 @@ lbu_commit
 
 ## Acknowledgement
 This is a trivial hack with a result that its author finds incredibly useful. It only exists because of the yeoman's work done by Jimmy Shimizu (https://github.com/jishi/). Thank you, Jimmy!!!
+
+## More
+[Announcement post](https://en.community.sonos.com/advanced-setups-229000/sonosampjuicepi-solution-for-automatically-powering-on-off-amps-6756435) on the Sonos forums.
