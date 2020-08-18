@@ -1,12 +1,18 @@
 # SonosAmpJuiceTasmota
 
 ## Purpose
-The purpose of this application is to turn power off and on at the mains for amplifiers/receivers, based on Sonos activity and using MQTT or REST to control inexpensive ESP8266-based switches flashed with Tamosta (such as the Sonoff Basic and Gosund Power Plug).
+The purpose of this pair of applications is to turn power off and on at  amplifiers/receivers, based on monitoring Sonos activity, using MQTT or REST to control inexpensive WiFi switches flashed with Tasmota (such as the Sonoff Basic and Gosund Power Plug).
 
-## App.js
-  - Edit the `amps` variable to associate each of your sonos player/room names with an MQTT address or REST URL corresponding to the Tasmota device for that Sonos zone.
+## Configuration
   - Edit the `stopTimeout` variable if you want to change the delay between when the application learns that an amp can be turned off and when it does so.
-  - Change the value of the `justTestingOnSomeDeviceThatLacksGpio` variable to `true` if you want to test the application on your PC (by running node and watching log files and/or command-line output).
+  - Change the value of the `justTesting` variable to `true` if you want to test the application without triggering a WiFi switch (by running node and watching log files and/or command-line output).
+
+## ampjuice-mqtt.js
+  - Edit the `amps` variable to associate each of your sonos player/room names with the MQTT topic corresponding to the Tasmota device for that player or room name.
+  - Edit the `mqtt.connect` URL to point to your MQTT broker.  Edit `username` and `password` if your MQTT broker requires authentication.
+  
+## ampjuice-rest.js
+  - Edit the `amps` variable to associate each of your sonos player/room names with the IP address/hostname of the Tasmota device for that player or room name.
 
 ## Notes
   - Responds appropriately to grouping, ungrouping, muting, pausing, stopping, playing, turning the volume all the way down to zero, and increasing the volume from zero
@@ -17,7 +23,7 @@ The purpose of this application is to turn power off and on at the mains for amp
   - A player's amplifier may turn on upon being added to a group even when the group is not playing anything. It will turn off after `stopTimeout` if the group does not begin playing something in the meantime.
 
 ## Acknowledgement
-Forked from https://github.com/geeeyetee/SonosAmpJuicePi which is based on work done by Jimmy Shimizu (https://github.com/jishi/). Thanks for your inspiration.
+Forked from https://github.com/geeeyetee/SonosAmpJuicePi which is based on work done by Jimmy Shimizu (https://github.com/jishi/). Thank you for your inspiration.
 
 ## More
 [Announcement post](https://en.community.sonos.com/  TBD
